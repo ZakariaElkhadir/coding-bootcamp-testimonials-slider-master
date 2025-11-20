@@ -1,0 +1,134 @@
+@import "normalizer.css";
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+:root {
+    --primary-blue-950: hsl(240, 38%, 20%);
+    --gray-400: hsl(240, 18%, 77%);
+    --font-family: 'Inter', sans-serif;
+    --font-size-body: 32px;
+    --font-weight-light: 300;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-size-body);
+    color: var(--primary-blue-950);
+    font-weight: var(--font-weight-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+    background: url(/images/pattern-curve.svg) no-repeat bottom left;
+    background-size: auto;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 auto;
+    padding: 20px;
+    align-items: center;
+    gap: 60px;
+    max-width: 1200px;
+}
+
+.text-section {
+    padding-bottom: 60px;
+    background-image: url(/images/pattern-quotes.svg);
+    background-repeat: no-repeat;
+    background-position: top center;
+    padding-left: 60px;
+
+}
+
+.image-section {
+    position: relative;
+}
+
+.author-info {
+    font-size: 25px;
+    display: flex;
+    gap: 10px;
+    font-weight: var(--font-weight-light);
+    color: var(--primary-blue-950);
+}
+
+
+
+.author-info .author {
+    font-weight: var(--font-weight-bold);
+}
+
+.author-info .field {
+    color: var(--gray-400);
+}
+.image-section{
+    background: url(/images/pattern-bg.svg) no-repeat center;
+    background-size: contain;
+    padding: 60px;
+    position: relative;
+}
+.image-section .person-img{
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 30px 50px -25px rgba(36, 36, 113, 0.25);
+}
+.controls button{
+    background : none;
+    border: none;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    
+}
+.controls{
+    position: absolute;
+    bottom: 50px;
+    margin-left: 20px;
+    z-index: 20;
+    background-color: white;
+    box-shadow: 0 10px 20px -10px rgba(36,  36, 113, 0.25);
+    width: fit-content;
+    border-radius: 50px;
+    padding: 5px;
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 18px;
+    }
+
+    #container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        max-width: 550px;
+    }
+
+    .text-section {
+        order: 2;
+        text-align: center;
+        padding: 20px;
+        background-position: top center;
+    }
+
+    .image-section {
+        order: 1;
+        padding: 30px;
+    }
+
+    .author-info {
+        flex-direction: column;
+        gap: 5px;
+        justify-content: center;
+    }
+
+    .controls {
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-left: 0;
+    }
+}
